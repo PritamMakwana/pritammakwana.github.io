@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hulk Mode Activation</title>
+
+<style>
+    body {
+        /* margin: 0;
+        background: #000;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        font-family: 'Poppins', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; */
+    }
+
+    .transform-scene {
+        text-align: center;
+        position: relative;
+    }
+
+    .profile-wrapper {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: auto;
+    }
+
+    #profile {
+        width: 100%;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        transition: all 1s ease;
+    }
+
+    .green-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, rgba(0, 255, 0, 0.3), transparent 70%);
+        mix-blend-mode: color;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    #status {
+        margin-top: 30px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translate(0, 0); }
+        20% { transform: translate(-5px, 3px); }
+        40% { transform: translate(5px, -3px); }
+        60% { transform: translate(-3px, -5px); }
+        80% { transform: translate(3px, 5px); }
+    }
+
+    @keyframes glow {
+        0%, 100% { box-shadow: 0 0 15px #00ff00; }
+        50% { box-shadow: 0 0 35px #00ff00; }
+    }
+    .hulk-mode #profile {
+        filter: hue-rotate(100deg) saturate(3);
+        transform: scale(1.2);
+        border-color: #00ff00;
+        animation: shake 0.3s infinite, glow 1s infinite;
+    }
+
+    .hulk-mode .green-overlay {
+        opacity: 1;
+    }
+
+    .hulk-mode #status {
+        color: #00ff00;
+        text-shadow: 0 0 10px #00ff00;
+        animation: none;
+    }
+</style>
+</head>
+
+<body>
+    <div class="transform-scene">
+        <div class="profile-wrapper">
+            <img id="profile" src="images/photo.jpg" alt="Profile" style="height: 150px;">
+            <div class="green-overlay"></div>
+        </div>
+        <div id="status">Activating...</div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const scene = document.querySelector(".transform-scene");
+            const profile = document.getElementById("profile");
+            const status = document.getElementById("status");
+            profile.style.opacity = "0";
+            setTimeout(() => {
+                profile.src = "images/profile2.jpg";
+                profile.style.opacity = "1";
+            }, 800); 
+            scene.classList.add("hulk-mode");
+            status.textContent = "💚 HULK MODE ACTIVATED 💥";
+        }, 2500);
+    </script>
+</body>
+</html>
