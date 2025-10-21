@@ -30,7 +30,7 @@
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	<!-- Loader -->
-	<div id="loading" style="position: fixed; top:0; left:0; width:100%; height:100%; display:flex; justify-content:center; align-items:center; background:#000; z-index:9999; visibility: visible;">
+	<!-- <div id="loading" style="position: fixed; top:0; left:0; width:100%; height:100%; display:flex; justify-content:center; align-items:center; background:#000; z-index:9999; visibility: visible;">
 		<div class="transform-scene">
 			<div class="profile-wrapper">
 				<img id="profile" src="images/profile.jpg" alt="Profile" style="height: 150px;">
@@ -38,10 +38,10 @@
 			</div>
 			<div id="status">Activating...</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Main content -->
-	<div class="main-content">
+	<!-- <div class="main-content"> -->
 
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 			<div class="container">
@@ -920,7 +920,7 @@
 			</svg></div>
 
 		<!-- Rest of your page sections here -->
-	</div>
+	<!-- </div> -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
@@ -1009,63 +1009,63 @@
 
 
 	<script>
-		// Step 1: Start Hulk Mode after 2.5s
-		setTimeout(() => {
-			const scene = document.querySelector(".transform-scene");
-			const profile = document.getElementById("profile");
-			const status = document.getElementById("status");
+		// // Step 1: Start Hulk Mode after 2.5s
+		// setTimeout(() => {
+		// 	const scene = document.querySelector(".transform-scene");
+		// 	const profile = document.getElementById("profile");
+		// 	const status = document.getElementById("status");
 
-			// Fade out normal image
-			profile.style.opacity = "0";
+		// 	// Fade out normal image
+		// 	profile.style.opacity = "0";
 
-			setTimeout(() => {
-				// Change to Hulk image
-				profile.src = "images/profile2.jpg";
-				profile.style.opacity = "1";
-			}, 500);
+		// 	setTimeout(() => {
+		// 		// Change to Hulk image
+		// 		profile.src = "images/profile2.jpg";
+		// 		profile.style.opacity = "1";
+		// 	}, 500);
 
-			// Activate Hulk Mode animations
-			scene.classList.add("hulk-mode");
-			status.textContent = "💚 HULK MODE ACTIVATED 💥";
+		// 	// Activate Hulk Mode animations
+		// 	scene.classList.add("hulk-mode");
+		// 	status.textContent = "💚 HULK MODE ACTIVATED 💥";
 
-			// Step 2: After 3 seconds, revert Hulk and show funny message
-			setTimeout(() => {
-				// Start fade out of Hulk image
-				profile.style.opacity = "0";
+		// 	// Step 2: After 3 seconds, revert Hulk and show funny message
+		// 	setTimeout(() => {
+		// 		// Start fade out of Hulk image
+		// 		profile.style.opacity = "0";
 
-				setTimeout(() => {
-					// Change to normal/developer profile image
-					profile.src = "images/profile3.jpg";
-					profile.style.opacity = "1";
-				}, 500);
+		// 		setTimeout(() => {
+		// 			// Change to normal/developer profile image
+		// 			profile.src = "images/profile3.jpg";
+		// 			profile.style.opacity = "1";
+		// 		}, 500);
 
-				// Remove Hulk animations
-				scene.classList.remove("hulk-mode");
+		// 		// Remove Hulk animations
+		// 		scene.classList.remove("hulk-mode");
 
-				// Funny message after transformation
-				status.textContent = "😎 Sorry! You need a developer to handle this!";
-			}, 4000); // Hulk mode visible for 3s
-		}, 2500); // Wait 2.5s before activating Hulk Mode
+		// 		// Funny message after transformation
+		// 		status.textContent = "😎 Sorry! You need a developer to handle this!";
+		// 	}, 4000); // Hulk mode visible for 3s
+		// }, 2500); // Wait 2.5s before activating Hulk Mode
 
-		window.addEventListener('load', () => {
-			const loading = document.getElementById('loading');
-			const body = document.body;
+		// window.addEventListener('load', () => {
+		// 	const loading = document.getElementById('loading');
+		// 	const body = document.body;
 
-			// Show loader first
-			loading.style.visibility = 'visible';
-			body.style.visibility = 'hidden';
+		// 	// Show loader first
+		// 	loading.style.visibility = 'visible';
+		// 	body.style.visibility = 'hidden';
 
-			// Set background black for first 10 seconds
-			const originalBg = body.style.backgroundColor; // Save original
-			body.style.backgroundColor = '#000 !important';
+		// 	// Set background black for first 10 seconds
+		// 	const originalBg = body.style.backgroundColor; // Save original
+		// 	body.style.backgroundColor = '#000 !important';
 
-			// After 10 seconds
-			setTimeout(() => {
-				loading.style.visibility = 'hidden'; // Hide loader
-				body.style.visibility = 'visible'; // Show full body
-				body.style.backgroundColor = originalBg || '#fff'; // Restore original
-			}, 13000); // 10000ms = 10 seconds
-		});
+		// 	// After 10 seconds
+		// 	setTimeout(() => {
+		// 		loading.style.visibility = 'hidden'; // Hide loader
+		// 		body.style.visibility = 'visible'; // Show full body
+		// 		body.style.backgroundColor = originalBg || '#fff'; // Restore original
+		// 	}, 13000); // 10000ms = 10 seconds
+		// });
 	</script>
 </body>
 
